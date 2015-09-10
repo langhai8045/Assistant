@@ -56,7 +56,7 @@
     </bean>
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-       <property name="basePackage" value="com.unicom.doc.mapper" />
+       <property name="basePackage" value="com.lescaos.doc.mapper" />
        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
 	
@@ -84,7 +84,7 @@
 	</tx:advice>
     <aop:config>
         <aop:pointcut id="baseServiceOperation"
-                      expression="execution(* com.unicom.doc.service..*.*(..))" />
+                      expression="execution(* com.lescaos.doc.service..*.*(..))" />
         <aop:advisor advice-ref="txAdvice" pointcut-ref="baseServiceOperation" />
     </aop:config>
     
