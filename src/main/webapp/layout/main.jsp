@@ -9,57 +9,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/style.css">
     <title><sitemesh:title/></title>
     <!-- Bootstrap -->
-    <link href="${ctx}/resources/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="${ctx}/resources/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/bootstrap-responsive.css">
     <sitemesh:head/>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">Help</a></li>
-            </ul>
+<!-- 头部导航栏 -->
+<div class="headroom navbar navbar-inverse navbar-fixed-top" id="header">
+    <!-- 定义个内部框架表现的基调,位置大小背景等 -->
+    <div class="navbar-inner">
+        <!-- 定义实现块的css,具体内容都包含在container中 -->
+        <div class="container">
+            <!-- 定义响应时用的按钮元素,界面大小改变时会用到 -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <!-- 定义品牌链接导航 -->
+            <!-- 不知道为什么这么定义 -->
+            <a class="brand" href="#">Assistant</a>
+            <!-- 定义了个响应触发点 -->
+            <div class="nav-collapse collapse">
+                <!-- 定义导航列表 -->
+                <ul class="nav">
+                    <!-- 首页链接高亮 -->
+                    <li class=""> <a href="./index.html">首页</a> </li>
+                </ul>
+            </div>
         </div>
     </div>
-</nav>
+</div>
 
-<div class="container-fluid">
+<div class="container">
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="${ctx}/interface/list">接口管理<span class="sr-only">(current)</span></a></li>
+        <!-- 左侧导航栏 -->
+        <div class="span3">
+            <ul class="nav nav-list affix">
+                <li class="nav-header">
+                    列表标题
+                </li>
+                <li class="active">
+                    <a href="${ctx}/interface/list">首页</a>
+                </li>
+                <li>
+                    <a href="#">库</a>
+                </li>
+                <li>
+                    <a href="#">应用</a>
+                </li>
+                <li class="nav-header">
+                    功能列表
+                </li>
+                <li>
+                    <a href="#">资料</a>
+                </li>
+                <li>
+                    <a href="#">设置</a>
+                </li>
+                <li class="divider">
+                </li>
+                <li>
+                    <a href="#">帮助</a>
+                </li>
             </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="span9">
             <sitemesh:body/>
         </div>
     </div>
 </div>
-</div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="${ctx}/resources/js/bootstrap.min.js"></script>
+
+
+<script type="text/javascript" src="${ctx}/resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/headroom.js"></script>
+<script type="text/javascript" src="${ctx}/resources/js/jQuery.headroom.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#header").headroom({
+
+        });
+    });
+</script>
 </body>
 </html>
