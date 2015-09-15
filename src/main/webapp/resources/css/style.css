@@ -7,7 +7,46 @@ body {
     padding-top: 40px;
 }
 
-.headroom {
+.header--fixed {
+    position: fixed;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.affix {
+    top: 40px;
+}
+
+.nav-list {
+    width: 210px;
+    margin: 30px 0 0;
+    padding: 0;
+}
+
+@media (max-width: 767px){
+    .affix {
+        position: static;
+        width: auto;
+        top: 0;
+    }
+    .nav-list {
+        width: auto;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 979px) and (min-width: 768px){
+
+    .nav-list {
+        width: 166px;
+        margin-top: 20px;
+    }
+}
+
+
+.animated {
     -webkit-animation-duration: .5s;
     -moz-animation-duration: .5s;
     -o-animation-duration: .5s;
@@ -18,7 +57,43 @@ body {
     animation-fill-mode: both
 }
 
-.headroom.headroom--pinned {
+@-webkit-keyframes swingInX {
+    0% {
+        -webkit-transform: perspective(400px) rotateX(-90deg)
+    }
+    100% {
+        -webkit-transform: perspective(400px) rotateX(0deg)
+    }
+}
+
+@-moz-keyframes swingInX {
+    0% {
+        -moz-transform: perspective(400px) rotateX(-90deg)
+    }
+    100% {
+        -moz-transform: perspective(400px) rotateX(0deg)
+    }
+}
+
+@-o-keyframes swingInX {
+    0% {
+        -o-transform: perspective(400px) rotateX(-90deg)
+    }
+    100% {
+        -o-transform: perspective(400px) rotateX(0deg)
+    }
+}
+
+@keyframes swingInX {
+    0% {
+        transform: perspective(400px) rotateX(-90deg)
+    }
+    100% {
+        transform: perspective(400px) rotateX(0deg)
+    }
+}
+
+.animated.swingInX {
     -webkit-transform-origin: top;
     -moz-transform-origin: top;
     -ie-transform-origin: top;
@@ -34,7 +109,43 @@ body {
     animation-name: swingInX
 }
 
-.headroom.headroom--uppinned {
+@-webkit-keyframes swingOutX {
+    0% {
+        -webkit-transform: perspective(400px) rotateX(0deg)
+    }
+    100% {
+        -webkit-transform: perspective(400px) rotateX(-90deg)
+    }
+}
+
+@-moz-keyframes swingOutX {
+    0% {
+        -moz-transform: perspective(400px) rotateX(0deg)
+    }
+    100% {
+        -moz-transform: perspective(400px) rotateX(-90deg)
+    }
+}
+
+@-o-keyframes swingOutX {
+    0% {
+        -o-transform: perspective(400px) rotateX(0deg)
+    }
+    100% {
+        -o-transform: perspective(400px) rotateX(-90deg)
+    }
+}
+
+@keyframes swingOutX {
+    0% {
+        transform: perspective(400px) rotateX(0deg)
+    }
+    100% {
+        transform: perspective(400px) rotateX(-90deg)
+    }
+}
+
+.animated.swingOutX {
     -webkit-transform-origin: top;
     -webkit-animation-name: swingOutX;
     -webkit-backface-visibility: visible !important;

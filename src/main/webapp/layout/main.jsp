@@ -9,16 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/style.css">
     <title><sitemesh:title/></title>
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/style.css">
     <sitemesh:head/>
 </head>
 <body>
 <!-- 头部导航栏 -->
-<div class="headroom navbar navbar-inverse navbar-fixed-top" id="header">
+<div class="header--fixed navbar navbar-inverse navbar-fixed-top" id="header">
     <!-- 定义个内部框架表现的基调,位置大小背景等 -->
     <div class="navbar-inner">
         <!-- 定义实现块的css,具体内容都包含在container中 -->
@@ -45,32 +45,19 @@
         <!-- 左侧导航栏 -->
         <div class="span3">
             <ul class="nav nav-list affix">
-                <li class="nav-header">
-                    列表标题
-                </li>
                 <li class="active">
-                    <a href="${ctx}/interface/list">首页</a>
+                    <a href="${ctx}/interface/list">接口管理</a>
                 </li>
                 <li>
-                    <a href="#">库</a>
+                    <a href="#">路人甲</a>
                 </li>
                 <li>
-                    <a href="#">应用</a>
-                </li>
-                <li class="nav-header">
-                    功能列表
+                    <a href="#">路人甲</a>
                 </li>
                 <li>
-                    <a href="#">资料</a>
+                    <a href="#">路人甲</a>
                 </li>
-                <li>
-                    <a href="#">设置</a>
-                </li>
-                <li class="divider">
-                </li>
-                <li>
-                    <a href="#">帮助</a>
-                </li>
+
             </ul>
         </div>
         <div class="span9">
@@ -87,7 +74,13 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#header").headroom({
-
+            "tolerance": 0,
+            "offset": 150,
+            "classes": {
+                "initial": "animated",
+                "pinned": "swingInX",
+                "unpinned": "swingOutX"
+            }
         });
     });
 </script>
